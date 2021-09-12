@@ -1,0 +1,100 @@
+# Use this file to configure the Overcommit hooks you wish to use. This will
+# extend the default configuration defined in:
+# https://github.com/sds/overcommit/blob/master/config/default.yml
+#
+# At the topmost level of this YAML file is a key representing type of hook
+# being run (e.g. pre-commit, commit-msg, etc.). Within each type you can
+# customize each hook, such as whether to only run it on certain files (via
+# `include`), whether to only display output if it fails (via `quiet`), etc.
+#
+# For a complete list of hooks, see:
+# https://github.com/sds/overcommit/tree/master/lib/overcommit/hook
+#
+# For a complete list of options that you can use to customize hooks, see:
+# https://github.com/sds/overcommit#configuration
+#
+# Uncomment the following lines to make the configuration take effect.
+
+PreCommit:
+  ALL:
+    on_warn: fail
+  AuthorEmail:
+    enabled: true
+  AuthorName:
+    enabled: true
+  CaseConflicts:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+    exclude:
+      - spec/fixtures/**/*
+      - docs/**/*
+  RailsSchemaUpToDate:
+    enabled: true
+    description: "Check if database schema is up to date"
+    include:
+      - "db/migrate/*.rb"
+      - "db/schema.rb"
+  # RSpec:
+  #   enabled: true
+  #   env:
+  #     RAILS_ENV: test
+  #   command: ["bundle", "exec", "rspec"]
+  # RuboCop:
+  #   enabled: true
+  #   command: ["bundle", "exec", "rubocop", "app/", "-a"]
+  SlimLint:
+    enabled: true
+    command: ["bundle", "exec", "slim-lint", "."]
+  # BundleAudit:
+  #   enabled: true
+  #   command: ["bundle", "exec", "bundle-audit", "check", "--update"]
+  # Brakeman:
+  #   enabled: true
+  #   command: ["bundle", "exec", "brakeman"]
+  #   flags: ["--run-all-checks", "--exit-on-warn", "--quiet", "--summary"]
+  # RailsBestPractices:
+  #   enabled: true
+  #   required_executable: "rails_best_practices"
+  #   command:
+  #     [
+  #       "bundle",
+  #       "exec",
+  #       "rails_best_practices",
+  #       ".",
+  #       "-c",
+  #       "config/rails_best_practices.yml",
+  #     ]
+  ExecutePermissions:
+    enabled: false
+    exclude:
+      - bin/**/*
+      - docker/rails/docker-entrypoint.sh
+  ShellCheck:
+    enabled: true
+  # Fasterer:
+  #   enabled: true
+  HardTabs:
+    enabled: true
+  LineEndings:
+    enabled: true
+    exclude:
+      - app/assets/images/*
+      - spec/fixtures/**/*
+
+  MergeConflicts:
+    enabled: true
+  JsonSyntax:
+    enabled: true
+  FileSize:
+    enabled: true
+  EsLint:
+    enabled: true
+    command: ["yarn", "run", "eslint", "app/"]
+  # Prettier:
+  #   enabled: true
+  #   description: Run prettier to format code
+  #   command: ["yarn", "run", "prettier"]
+  #   on_warn: pass
+  #   on_fail: pass
+  #   quiet: false
