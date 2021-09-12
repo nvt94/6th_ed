@@ -35,36 +35,36 @@ PreCommit:
     include:
       - "db/migrate/*.rb"
       - "db/schema.rb"
-  # RSpec:
-  #   enabled: true
-  #   env:
-  #     RAILS_ENV: test
-  #   command: ["bundle", "exec", "rspec"]
-  # RuboCop:
-  #   enabled: true
-  #   command: ["bundle", "exec", "rubocop", "app/", "-a"]
+  RSpec:
+    enabled: true
+    env:
+      RAILS_ENV: test
+    command: ["bundle", "exec", "rspec"]
+  RuboCop:
+    enabled: true
+    command: ["bundle", "exec", "rubocop", "app/", "-a"]
   SlimLint:
     enabled: true
     command: ["bundle", "exec", "slim-lint", "."]
-  # BundleAudit:
-  #   enabled: true
-  #   command: ["bundle", "exec", "bundle-audit", "check", "--update"]
+  BundleAudit:
+    enabled: true
+    command: ["bundle", "exec", "bundle-audit", "check", "--update"]
   # Brakeman:
   #   enabled: true
   #   command: ["bundle", "exec", "brakeman"]
   #   flags: ["--run-all-checks", "--exit-on-warn", "--quiet", "--summary"]
-  # RailsBestPractices:
-  #   enabled: true
-  #   required_executable: "rails_best_practices"
-  #   command:
-  #     [
-  #       "bundle",
-  #       "exec",
-  #       "rails_best_practices",
-  #       ".",
-  #       "-c",
-  #       "config/rails_best_practices.yml",
-  #     ]
+  RailsBestPractices:
+    enabled: true
+    required_executable: "rails_best_practices"
+    command:
+      [
+        "bundle",
+        "exec",
+        "rails_best_practices",
+        ".",
+        "-c",
+        "config/rails_best_practices.yml",
+      ]
   ExecutePermissions:
     enabled: false
     exclude:

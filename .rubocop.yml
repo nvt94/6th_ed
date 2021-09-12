@@ -1,0 +1,30 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - lib/tasks/**/*
+    - node_modules/**/*
+    - vendor/**/*
+    - tmp/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 90
+  Exclude:
+    - Gemfile
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
