@@ -72,8 +72,8 @@ PreCommit:
       - docker/rails/docker-entrypoint.sh
   ShellCheck:
     enabled: true
-  # Fasterer:
-  #   enabled: true
+  Fasterer:
+    enabled: true
   HardTabs:
     enabled: true
   LineEndings:
@@ -91,10 +91,10 @@ PreCommit:
   EsLint:
     enabled: true
     command: ["yarn", "run", "eslint", "app/"]
-  # Prettier:
-  #   enabled: true
-  #   description: Run prettier to format code
-  #   command: ["yarn", "run", "prettier"]
-  #   on_warn: pass
-  #   on_fail: pass
-  #   quiet: false
+  Prettier:
+    enabled: true
+    description: Run prettier to format code
+    command: ["yarn", "run", "prettier"]
+    on_warn: pass
+    on_fail: pass
+    quiet: false
