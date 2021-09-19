@@ -17,6 +17,8 @@ gem 'fasterer'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry', '~> 0.13.1'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0.1'
   gem 'shoulda-matchers'
 end
