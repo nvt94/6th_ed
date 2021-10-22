@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get 'homepage', to: 'static_pages#index'
+  root 'static_pages#index'
+  resources :posts
 end
